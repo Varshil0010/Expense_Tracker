@@ -9,8 +9,10 @@ namespace Expense_Tracker.Models
         public int TranstionId { get; set; }
 
         //CategoryId
+        [Range(1, int.MaxValue, ErrorMessage = "Please select a category.")]
         public int CategoryId { get; set; }
 
+        [Range(1, int.MaxValue, ErrorMessage = "Amount should be gretaer than 0.")]
         public int Amount { get; set; }
 
         [Column(TypeName = "nvarchar(75)")]
